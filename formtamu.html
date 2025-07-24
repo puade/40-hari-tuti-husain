@@ -57,14 +57,9 @@
 <div class="container">
     <!-- Form untuk mengganti nama Fulan & Fulanah -->
     <div style="background-color: #e1f2ff; padding:10px; border-radius:10px;">
-        <h2 class="text-center">Nama Mempelai</h2>
+        <h2 class="text-center">Nama Almarhum/Almarhumah</h2>
         <div class="mb-3">
-            <label for="priaInput" class="form-label">Mempelai Pria:</label>
-            <input type="text" class="form-control" id="priaInput" placeholder="Masukkan nama panggilan pria" required disabled>
-        </div>
-        <div class="mb-3">
-            <label for="wanitaInput" class="form-label">Mempelai Wanita:</label>
-            <input type="text" class="form-control" id="wanitaInput" placeholder="Masukkan nama panggilan wanita" required disabled>
+            <input type="text" class="form-control" id="priaInput" placeholder="Masukkan nama Almarhum/Almarhumah" required disabled>
         </div>
         <div id="errorMessage" class="error"></div> <!-- Menampilkan pesan error -->
     </div>
@@ -110,8 +105,7 @@
 <script>
     // Mengisi form secara otomatis ketika halaman dimuat
     window.onload = function() {
-        document.getElementById('priaInput').value = 'Rin'; // Mengisi nama pria
-        document.getElementById('wanitaInput').value = 'Feby'; // Mengisi nama wanita
+        document.getElementById('priaInput').value = '(Almarhumah) Tuti Husain'; // Mengisi nama pria
     };
 
     // Fungsi untuk menangani form submit
@@ -123,11 +117,10 @@
 
         // Ambil nama Fulan & Fulanah
         var Fulan = document.getElementById('priaInput').value;
-        var Fulanah = document.getElementById('wanitaInput').value;
 
         // Validasi untuk nama mempelai
-        if (!Fulan || !Fulanah) {
-            document.getElementById('errorMessage').textContent = "Harap isi nama mempelai pria dan wanita.";
+        if (!Fulan) {
+            document.getElementById('errorMessage').textContent = "Harap isi nama Almarhum/Alhmarhumah.";
             return;  // Tidak melanjutkan jika ada input yang kosong
         } else {
             document.getElementById('errorMessage').textContent = "";  // Hapus pesan error jika valid
@@ -144,23 +137,26 @@
         // Membuat output dengan teks yang diinginkan dan mengganti "Fulan & Fulanah"
         var output = `Bismillahirrahmanirrahim
 
-"Dan segala sesuatu kami ciptakan berpasang-pasangan supaya kamu mengingat kebesaran Allah." (Q.S. Adz-Dzariyat:49)
+كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ. 
+
+Artinya : "Setiap yang bernyawa pasti akan merasakan kematian." (Q.S. Al-Ankabut:57)
 
 Undangan ini merupakan undangan resmi dari kami,
-Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Takziah atas Wafatnya Orang Tua kami, Ibu kami, Tante Kami.
+
+Almarhumah *Tuti Husain*
 
 Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :
 
-https://puade.github.io/feby-rin/?kepada=${formattedNama}
+https://puade.github.io/7-hari-tuti-husain/?kepada=${formattedNama}
 
-Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu. 
+Atas Kehadiran Bapak/Ibu/Saudara(i), tak lupa kami ucapkan terima kasih.. 
 
 Terimakasih...
 
 Wassalamualaikum Warahmatullahi Wabarakatuh
 
-Hormat kami
-${Fulanah} & ${Fulan}`;
+${""}`;
 
         // Tampilkan hasil output
         document.getElementById('output').textContent = output;
