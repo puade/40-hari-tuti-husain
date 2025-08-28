@@ -5,7 +5,7 @@
 
   // Jika parameter 'kepada' ada, tambahkan ke URL
   if (recipientName) {
-    const newUrl = `https://puade.github.io/7-hari-tuti-husain/?kepada=${recipientName}`;
+    const newUrl = `https://puade.github.io/40-hari-tuti-husain/?kepada=${recipientName}`;
     // Update og:url dengan URL yang baru
     document.querySelector('meta[property="og:url"]').setAttribute("content", newUrl);
 
@@ -15,7 +15,7 @@
   
     // Countdown function
     function countdown() {
-      const countDate = new Date("July 28, 2025 16:00:00").getTime();
+      const countDate = new Date("August 29, 2025 18:30:00").getTime();
       const now = new Date().getTime();
       const gap = countDate - now;
   
